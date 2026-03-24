@@ -37,32 +37,7 @@ const areas = [
 
 export function PracticeAreas() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: { 
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    },
-  };
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
     <section id="areas" className="py-16 sm:py-24 bg-[#000000] relative overflow-hidden" ref={ref}>
@@ -73,9 +48,9 @@ export function PracticeAreas() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d8ac6d]/30 bg-[#d8ac6d]/5 mb-6">
             <div className="w-2 h-2 rounded-full bg-[#d8ac6d] animate-pulse" />
@@ -89,27 +64,29 @@ export function PracticeAreas() {
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {areas.map((area, index) => {
             const Icon = area.icon;
             return (
               <motion.div
                 key={index}
-                variants={cardVariants}
+                initial={{ opacity: 0, y: 50, filter: "blur(10px)", scale: 0.92 }}
+                animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.1 + index * 0.08,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }}
                 className="group relative bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-[#ffffff]/10 hover:border-[#d8ac6d]/50"
               >
                 {/* Hover gradient effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#d8ac6d]/0 via-[#d8ac6d]/0 to-[#d8ac6d]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 <div className="relative z-10 flex flex-col items-start gap-6">
                   <motion.div
                     className="bg-gradient-to-br from-[#d8ac6d] to-[#b3884b] p-4 rounded-xl flex-shrink-0 shadow-lg shadow-[#d8ac6d]/20"
-                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                    whileHover={{ rotate: [0, -8, 8, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   >
                     <Icon className="w-7 h-7 text-white" />
@@ -126,7 +103,7 @@ export function PracticeAreas() {
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

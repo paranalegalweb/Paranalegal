@@ -8,6 +8,7 @@ import { FAQ } from './components/FAQ';
 import { Location } from './components/Location';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <Location />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

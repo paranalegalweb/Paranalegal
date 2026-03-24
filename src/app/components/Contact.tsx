@@ -56,9 +56,9 @@ export function Contact() {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="text-[#d8ac6d] font-bold tracking-widest uppercase text-sm block mb-3">Asesoramiento Legal</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
@@ -72,25 +72,25 @@ export function Contact() {
         <motion.form
           onSubmit={handleSubmit}
           className="bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl relative"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 50 }}
+          initial={{ opacity: 0, y: 50, filter: "blur(12px)", scale: 0.96 }}
+          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] pointer-events-none" />
 
           {/* Selector de profesional */}
           <motion.div
             className="mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <label className="block text-gray-300 text-sm font-medium mb-3 pl-1">
               ¿Con quién desea consultar?
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {professionals.map((pro, index) => (
-                <button
+                <motion.button
                   key={index}
                   type="button"
                   onClick={() => setSelectedPro(selectedPro === index ? null : index)}
@@ -99,18 +99,24 @@ export function Contact() {
                       ? 'border-[#d8ac6d] bg-[#d8ac6d]/10'
                       : 'border-[#ffffff]/10 bg-[#000000]/30 hover:border-[#d8ac6d]/40 hover:bg-[#ffffff]/5'
                   }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >
-                  {/* Indicador seleccionado */}
                   <div className={`absolute top-3 right-3 w-4 h-4 rounded-full border-2 transition-all duration-300 flex items-center justify-center ${
                     selectedPro === index
                       ? 'border-[#d8ac6d] bg-[#d8ac6d]'
                       : 'border-[#ffffff]/20'
                   }`}>
                     {selectedPro === index && (
-                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                      <motion.div
+                        className="w-1.5 h-1.5 rounded-full bg-white"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 500, damping: 15 }}
+                      />
                     )}
                   </div>
-                  {/* Inicial */}
                   <div className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold sm:mb-3 flex-shrink-0 transition-colors duration-300 ${
                     selectedPro === index ? 'bg-[#d8ac6d] text-black' : 'bg-[#ffffff]/10 text-[#d8ac6d]'
                   }`}>
@@ -126,7 +132,7 @@ export function Contact() {
                       {pro.role}
                     </p>
                   </div>
-                </button>
+                </motion.button>
               ))}
             </div>
             {selectedPro === null && (
@@ -140,9 +146,9 @@ export function Contact() {
               <motion.div
                 key={field.id}
                 className={field.id === 'email' ? 'md:col-span-2' : ''}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+                animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
                 <label htmlFor={field.id} className="block text-gray-300 text-sm font-medium mb-2 pl-1">
                   {field.label}
@@ -154,7 +160,7 @@ export function Contact() {
                   required={field.required}
                   value={formData[field.id as keyof typeof formData]}
                   onChange={handleChange}
-                  className="w-full bg-[#000000]/50 border border-[#ffffff]/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all placeholder-gray-600"
+                  className="w-full bg-[#000000]/50 border border-[#ffffff]/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 placeholder-gray-600 hover:border-[#ffffff]/20"
                   placeholder={field.placeholder}
                 />
               </motion.div>
@@ -163,9 +169,9 @@ export function Contact() {
 
           <motion.div
             className="mb-8"
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.7 }}
+            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            transition={{ duration: 0.6, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
           >
             <label htmlFor="message" className="block text-gray-300 text-sm font-medium mb-2 pl-1">
               Detalle de su Consulta
@@ -177,22 +183,21 @@ export function Contact() {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="w-full bg-[#000000]/50 border border-[#ffffff]/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all resize-none placeholder-gray-600"
+              className="w-full bg-[#000000]/50 border border-[#ffffff]/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 resize-none placeholder-gray-600 hover:border-[#ffffff]/20"
               placeholder="Describa brevemente su situación..."
             />
           </motion.div>
 
           <motion.button
             type="submit"
-            className="w-full relative group overflow-hidden bg-gradient-to-r from-[#d8ac6d] to-[#b3884b] text-black font-bold px-6 py-4 md:py-5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(216,172,109,0.2)] hover:shadow-[0_0_30px_rgba(216,172,109,0.4)] flex items-center justify-center gap-3"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.99 }}
+            className="w-full relative group overflow-hidden bg-gradient-to-r from-[#d8ac6d] to-[#b3884b] text-black font-bold px-6 py-4 md:py-5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(216,172,109,0.2)] hover:shadow-[0_0_40px_rgba(216,172,109,0.4)] flex items-center justify-center gap-3"
+            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            transition={{ duration: 0.6, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
           >
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-            {/* Ícono mobile */}
             <MessageCircle className="w-5 h-5 relative z-10 flex-shrink-0" />
             <span className="relative z-10 text-base md:text-lg leading-tight text-center">
               {selectedPro !== null
