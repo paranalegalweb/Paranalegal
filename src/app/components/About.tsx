@@ -1,6 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Building, Users, Handshake } from 'lucide-react';
 
 const blurIn = {
   hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
@@ -30,14 +30,17 @@ export function About() {
 
   const cards = [
     {
+      icon: Building,
       title: "Acerca de Paraná Legal",
       text: 'Paraná Legal es un estudio jurídico integral con sede en Paraná, Entre Ríos, que brinda servicios legales especializados con profesionales formados y con amplio expertiz en las áreas del derecho de su especialidad.',
     },
     {
+      icon: Users,
       title: "Nuestro Equipo",
       text: 'Nuestro equipo está conformado por abogados con amplia experiencia en diversas ramas del derecho, comprometidos en la defensa de los intereses de nuestros clientes y en la resolución práctica de los conflictos.',
     },
     {
+      icon: Handshake,
       title: "Compromiso",
       text: 'Con años de trayectoria en el ejercicio profesional, nos distinguimos por nuestro enfoque personalizado, la atención integral de cada caso y el compromiso con la justicia.',
     }
@@ -129,8 +132,15 @@ export function About() {
                 whileHover={{ x: 4 }}
               >
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#d8ac6d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="text-xl font-bold text-[#000000] mb-3 group-hover:text-[#d8ac6d] transition-colors duration-300">{card.title}</h3>
-                <p className="text-[#524F4C] leading-relaxed">{card.text}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#d8ac6d]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#d8ac6d]/20 transition-colors duration-300">
+                    <card.icon className="w-5 h-5 text-[#d8ac6d]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#000000] mb-2 group-hover:text-[#d8ac6d] transition-colors duration-300">{card.title}</h3>
+                    <p className="text-[#524F4C] leading-relaxed">{card.text}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
