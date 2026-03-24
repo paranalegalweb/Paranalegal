@@ -19,9 +19,9 @@ export default function App() {
       <PracticeAreas />
       <Team />
       <Testimonials />
+      <Contact />
       <FAQ />
       <Location />
-      <Contact />
       <Footer />
       <WhatsAppFloat />
     </div>
