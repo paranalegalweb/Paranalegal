@@ -39,12 +39,43 @@ export function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 md:pt-16 pb-8">
 
-        {/* Grid principal */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-14">
+        {/* Mobile: layout compacto */}
+        <motion.div
+          className="md:hidden flex flex-col items-center text-center gap-4 mb-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <img
+            src={logoImage}
+            alt="Paraná Legal"
+            className="h-12 w-auto object-contain"
+          />
+          <p className="text-[#524F4C] text-xs leading-relaxed max-w-xs">
+            Estudio jurídico de consulta integral con sede en Paraná, Entre Ríos.
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[#524F4C] text-xs">
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#d8ac6d]" />
+              Santa Fe 53, Paraná
+            </span>
+            <a href="tel:+543434706093" className="flex items-center gap-1.5 hover:text-[#d8ac6d] transition-colors">
+              <Phone className="w-3.5 h-3.5 text-[#d8ac6d]" />
+              343 470 6093
+            </a>
+            <a href="mailto:consultas@paranalegal.com.ar" className="flex items-center gap-1.5 hover:text-[#d8ac6d] transition-colors">
+              <Mail className="w-3.5 h-3.5 text-[#d8ac6d]" />
+              consultas@paranalegal.com.ar
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Desktop: grid completo 4 columnas */}
+        <div className="hidden md:grid md:grid-cols-4 gap-12 mb-14">
 
           {/* Col 1 — Logo + descripción */}
           <motion.div
-            className="col-span-2 md:col-span-1 flex flex-col gap-5"
+            className="flex flex-col gap-5"
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
@@ -52,7 +83,7 @@ export function Footer() {
             <img
               src={logoImage}
               alt="Paraná Legal"
-              className="h-14 md:h-16 w-auto object-contain object-left"
+              className="h-16 w-auto object-contain object-left"
             />
             <p className="text-[#524F4C] text-sm leading-relaxed max-w-xs">
               Estudio jurídico de consulta integral con sede en Paraná, Entre Ríos.
@@ -104,16 +135,15 @@ export function Footer() {
 
           {/* Col 4 — Contacto */}
           <motion.div
-            className="col-span-2 md:col-span-1"
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-[#000000] text-xs font-semibold tracking-widest uppercase mb-4 md:mb-6">
+            <p className="text-[#000000] text-xs font-semibold tracking-widest uppercase mb-6">
               Contacto
             </p>
 
-            <div className="space-y-4 md:space-y-5">
+            <div className="space-y-5">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-full bg-[#d8ac6d]/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4 text-[#d8ac6d]" />
