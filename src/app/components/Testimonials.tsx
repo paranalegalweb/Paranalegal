@@ -68,20 +68,38 @@ const cardVariants = {
   }),
 };
 
-function TestimonialCard({ t, className = "" }: { t: typeof testimonials[0]; className?: string }) {
+const avatarColors = [
+  'from-[#d8ac6d] to-[#b3884b]',
+  'from-[#8b7355] to-[#6b5640]',
+  'from-[#c4956a] to-[#a07850]',
+  'from-[#bfa27e] to-[#9a825f]',
+  'from-[#d4a96a] to-[#ab8750]',
+  'from-[#9c8465] to-[#7a6548]',
+];
+
+function TestimonialCard({ t, index = 0, className = "" }: { t: typeof testimonials[0]; index?: number; className?: string }) {
+  const initials = t.name.split(' ').map(w => w.charAt(0)).join('').slice(0, 2);
+
   return (
     <div className={`bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col gap-5 hover:border-[#d8ac6d]/40 hover:bg-white/[0.07] transition-all duration-500 group ${className}`}>
-      <Quote className="w-7 h-7 lg:w-8 lg:h-8 text-[#d8ac6d] opacity-60" />
-      <p className="text-gray-300 leading-relaxed flex-1 text-sm lg:text-base">"{t.text}"</p>
-      <div>
-        <div className="flex gap-1 mb-3">
+      <div className="flex items-center justify-between">
+        <Quote className="w-7 h-7 lg:w-8 lg:h-8 text-[#d8ac6d] opacity-60" />
+        <div className="flex gap-1">
           {Array.from({ length: t.rating }).map((_, s) => (
-            <Star key={s} className="w-4 h-4 fill-[#d8ac6d] text-[#d8ac6d]" />
+            <Star key={s} className="w-3.5 h-3.5 fill-[#d8ac6d] text-[#d8ac6d]" />
           ))}
         </div>
-        <p className="text-white font-semibold text-sm lg:text-base">{t.name}</p>
-        <p className="text-gray-500 text-sm">{t.location}</p>
-        <span className="inline-block mt-2 text-xs text-[#d8ac6d] border border-[#d8ac6d]/30 rounded-full px-3 py-0.5">
+      </div>
+      <p className="text-gray-300 leading-relaxed flex-1 text-sm lg:text-base">"{t.text}"</p>
+      <div className="flex items-center gap-3 pt-2 border-t border-white/5">
+        <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${avatarColors[index % avatarColors.length]} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+          <span className="text-white text-xs font-bold tracking-wide">{initials}</span>
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-white font-semibold text-sm">{t.name}</p>
+          <p className="text-gray-500 text-xs">{t.location}</p>
+        </div>
+        <span className="text-[10px] text-[#d8ac6d] border border-[#d8ac6d]/25 rounded-full px-2.5 py-0.5 flex-shrink-0 hidden sm:inline-block">
           {t.area}
         </span>
       </div>
@@ -105,7 +123,8 @@ export function Testimonials() {
   const getVisible = () => {
     const items = [];
     for (let i = 0; i < 3; i++) {
-      items.push(testimonials[(current + i) % total]);
+      const idx = (current + i) % total;
+      items.push({ ...testimonials[idx], _idx: idx });
     }
     return items;
   };
@@ -162,7 +181,7 @@ export function Testimonials() {
                 transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 className={i === 2 ? 'hidden lg:block' : ''}
               >
-                <TestimonialCard t={t} />
+                <TestimonialCard t={t} index={t._idx} />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -180,7 +199,7 @@ export function Testimonials() {
               exit="exit"
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <TestimonialCard t={testimonials[current]} />
+              <TestimonialCard t={testimonials[current]} index={current} />
             </motion.div>
           </AnimatePresence>
         </div>
