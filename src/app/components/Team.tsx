@@ -1,9 +1,9 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { MessageCircle } from 'lucide-react';
-import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.png';
-import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.png';
-import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.png';
+import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.webp';
+import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.webp';
+import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.webp';
 
 const team = [
   {

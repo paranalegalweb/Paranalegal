@@ -6,8 +6,8 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { motion } from "motion/react";
-import heroBg from "@/assets/7e73778ff2b7d283667d8af7e0d5912a02ee4fb2.png";
-import heroBgMobile from "@/assets/10c8f7353ea862478caf79a37795f22d1eaa6127.png";
+import heroBg from "@/assets/7e73778ff2b7d283667d8af7e0d5912a02ee4fb2.webp";
+import heroBgMobile from "@/assets/10c8f7353ea862478caf79a37795f22d1eaa6127.webp";
 
 const containerVariants = {
   hidden: { opacity: 0 },

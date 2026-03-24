@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import logoImage from '@/assets/96541324be65db62bc366547e85317d16df43ad4.png';
+import logoImage from '@/assets/96541324be65db62bc366547e85317d16df43ad4.webp';
 
 const navLinks = [
   { label: 'Inicio', id: 'hero' },

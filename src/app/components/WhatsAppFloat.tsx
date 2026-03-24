@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.png';
-import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.png';
-import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.png';
+import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.webp';
+import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.webp';
+import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.webp';
 
 const contacts = [
   { name: 'Dra. Julieta Fowler', short: 'Julieta', role: 'Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
