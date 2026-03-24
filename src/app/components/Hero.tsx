@@ -126,8 +126,8 @@ export function Hero() {
             diversas áreas del derecho.
           </motion.p>
 
-          {/* Features — each animates individually */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12">
+          {/* Features — hidden on mobile, shown on sm+ */}
+          <div className="hidden sm:flex sm:flex-row gap-6 mb-12">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -149,6 +149,27 @@ export function Hero() {
               );
             })}
           </div>
+
+          {/* Features — mobile: compact inline pills */}
+          <motion.div
+            className="flex sm:hidden flex-wrap gap-2 mb-8"
+            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <span
+                  key={index}
+                  className="inline-flex items-center gap-1.5 text-white/70 text-xs font-medium bg-[#ffffff]/5 border border-[#ffffff]/8 px-3 py-1.5 rounded-full"
+                >
+                  <Icon className="w-3.5 h-3.5 text-[#d8ac6d] flex-shrink-0" />
+                  {feature.text}
+                </span>
+              );
+            })}
+          </motion.div>
 
           {/* CTA Button */}
           <motion.div
