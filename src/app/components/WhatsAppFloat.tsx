@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.png';
+import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.png';
+import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.png';
 
 const contacts = [
-  { name: 'Dra. Julieta Fowler', short: 'Julieta', role: 'Daños y Laboral', whatsapp: '5493436101776', initial: 'J' },
-  { name: 'Dr. Joaquín Gareis', short: 'Joaquín', role: 'Administrativo y Constitucional', whatsapp: '5493434519112', initial: 'J' },
-  { name: 'Dra. M. Carolina Harrington', short: 'Carolina', role: 'Familia, Sucesiones y Daños', whatsapp: '5493434757858', initial: 'M' },
+  { name: 'Dra. Julieta Fowler', short: 'Julieta', role: 'Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
+  { name: 'Dr. Joaquín Gareis', short: 'Joaquín', role: 'Administrativo y Constitucional', whatsapp: '5493434519112', image: gareisFoto },
+  { name: 'Dra. M. Carolina Harrington', short: 'Carolina', role: 'Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
 ];
 
 export function WhatsAppFloat() {
@@ -81,9 +84,11 @@ export function WhatsAppFloat() {
                     transition={{ delay: 0.05 + i * 0.05, duration: 0.3 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0 bg-[#d8ac6d]/15 text-[#d8ac6d]">
-                      {contact.initial}
-                    </div>
+                    <img
+                      src={contact.image}
+                      alt={contact.name}
+                      className="w-10 h-10 rounded-xl object-cover object-top flex-shrink-0 border border-[#d8ac6d]/20"
+                    />
                     <div className="flex-1 min-w-0">
                       <p className="text-white text-sm font-semibold truncate group-hover:text-[#d8ac6d] transition-colors duration-200">
                         {contact.name}
