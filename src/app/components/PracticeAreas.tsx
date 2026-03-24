@@ -1,0 +1,133 @@
+import { Heart, Car, Building2, Briefcase, Scale, Shield } from 'lucide-react';
+import { motion, useInView } from 'motion/react';
+import { useRef } from 'react';
+
+const areas = [
+  {
+    icon: Heart,
+    title: 'Derecho de Familia y Sucesiones',
+    description: 'Divorcios, alimentos, régimen de comunicación, compensaciones económicas, uniones convivenciales, adopciones, violencia de género, violencia familiar, permisos, régimen de bienes, filiaciones, sucesiones ab intestato, y planificación sucesoria.'
+  },
+  {
+    icon: Car,
+    title: 'Daños y Perjuicios',
+    description: 'Accidentes de tránsito, mala praxis médica, seguros, reclamos por daños contractuales, defensa del consumidor, responsabilidad civil en general, prevención del daño.'
+  },
+  {
+    icon: Building2,
+    title: 'Derecho Administrativo',
+    description: 'Recursos administrativos, contrataciones públicas, empleo público, responsabilidad del Estado y procedimientos ante organismos públicos.'
+  },
+  {
+    icon: Shield,
+    title: 'Amparos',
+    description: 'Amparos de salud, amparos por discapacidad, género, medio ambiente, y toda violación constitucional.'
+  },
+  {
+    icon: Scale,
+    title: 'Derecho Civil',
+    description: 'Derechos de las personas, usucapiones, guarda, tutela, asesoramiento contractual en todas las etapas, alquileres, desalojos, ejecuciones de contratos, cobros de pesos, ejecuciones en general.'
+  },
+  {
+    icon: Briefcase,
+    title: 'Derecho Laboral',
+    description: 'Despidos, ART, asesoramiento individual y colectivo, negociaciones colectivas y todo tipo de conflictos laborales.'
+  }
+];
+
+export function PracticeAreas() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    },
+  };
+
+  return (
+    <section id="areas" className="py-16 sm:py-24 bg-[#000000] relative overflow-hidden" ref={ref}>
+      {/* Decorative gradient orb */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#d8ac6d]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#524F4C]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d8ac6d]/30 bg-[#d8ac6d]/5 mb-6">
+            <div className="w-2 h-2 rounded-full bg-[#d8ac6d] animate-pulse" />
+            <span className="text-[#d8ac6d] text-sm font-medium tracking-wider uppercase">Nuestra Especialidad</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+            Áreas de <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8ac6d] to-white">Práctica</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            Acompañamos a nuestros clientes con excelencia y compromiso en diversas ramas del derecho.
+          </p>
+        </motion.div>
+
+        <motion.div 
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {areas.map((area, index) => {
+            const Icon = area.icon;
+            return (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                className="group relative bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-[#ffffff]/10 hover:border-[#d8ac6d]/50"
+              >
+                {/* Hover gradient effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d8ac6d]/0 via-[#d8ac6d]/0 to-[#d8ac6d]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10 flex flex-col items-start gap-6">
+                  <motion.div
+                    className="bg-gradient-to-br from-[#d8ac6d] to-[#b3884b] p-4 rounded-xl flex-shrink-0 shadow-lg shadow-[#d8ac6d]/20"
+                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Icon className="w-7 h-7 text-white" />
+                  </motion.div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#d8ac6d] transition-colors duration-300">
+                      {area.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                      {area.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
