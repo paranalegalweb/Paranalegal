@@ -104,12 +104,14 @@ export function Footer() {
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <button
+                  <motion.button
                     onClick={() => scrollToSection(link.id)}
                     className="text-[#524F4C] text-sm hover:text-[#d8ac6d] transition-colors duration-200"
+                    whileTap={{ scale: 0.95, color: '#d8ac6d' }}
+                    transition={{ duration: 0.15 }}
                   >
                     {link.label}
-                  </button>
+                  </motion.button>
                 </li>
               ))}
             </ul>
