@@ -20,8 +20,7 @@ export function WhatsAppFloat() {
   useEffect(() => {
     const handleScroll = () => {
       setShow(window.scrollY > 400);
-      const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 600);
-      setShowScrollTop(nearBottom);
+      setShowScrollTop(window.scrollY > 800);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
