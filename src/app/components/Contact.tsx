@@ -1,11 +1,14 @@
 import { useState, useRef } from 'react';
 import { Send, MessageCircle } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
+import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.webp';
+import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.webp';
+import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.webp';
 
 const professionals = [
-  { name: 'Dr. Joaquín Gareis', role: 'Derecho Administrativo, Constitucional y Laboral', whatsapp: '5493434519112', initial: 'J' },
-  { name: 'Dra. Julieta Fowler', role: 'Derecho de Daños y Laboral', whatsapp: '5493436101776', initial: 'J' },
-  { name: 'Dra. María Carolina Harrington', role: 'Derecho de Familia, Sucesiones y Daños', whatsapp: '5493434757858', initial: 'M' },
+  { name: 'Dr. Joaquín Gareis', role: 'Derecho Administrativo, Constitucional y Laboral', whatsapp: '5493434519112', image: gareisFoto },
+  { name: 'Dra. Julieta Fowler', role: 'Derecho de Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
+  { name: 'Dra. María Carolina Harrington', role: 'Derecho de Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
 ];
 
 export function Contact() {
@@ -122,11 +125,13 @@ export function Contact() {
                       />
                     )}
                   </div>
-                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold sm:mb-3 flex-shrink-0 transition-colors duration-300 ${
-                    selectedPro === index ? 'bg-[#d8ac6d] text-black' : 'bg-[#ffffff]/10 text-[#d8ac6d]'
-                  }`}>
-                    {pro.initial}
-                  </div>
+                  <img
+                    src={pro.image}
+                    alt={pro.name}
+                    className={`w-9 h-9 rounded-lg object-cover object-top sm:mb-3 flex-shrink-0 transition-all duration-300 ${
+                      selectedPro === index ? 'ring-2 ring-[#d8ac6d]' : 'opacity-70 grayscale-[30%]'
+                    }`}
+                  />
                   <div className="min-w-0">
                     <p className={`font-semibold text-sm leading-tight mb-0.5 sm:mb-1 transition-colors duration-300 ${
                       selectedPro === index ? 'text-[#d8ac6d]' : 'text-white'
