@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, X, ChevronRight } from 'lucide-react';
+import { MessageCircle, X, ChevronRight, ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.webp';
 import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.webp';
@@ -14,11 +14,14 @@ const contacts = [
 export function WhatsAppFloat() {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Show button after scrolling past hero
+  // Show buttons based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       setShow(window.scrollY > 400);
+      const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 600);
+      setShowScrollTop(nearBottom);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -106,6 +109,25 @@ export function WhatsAppFloat() {
               <div className="w-4 h-4 bg-[#0a0a0a] border-r border-b border-[#ffffff]/15 rotate-45 -mt-2" />
             </div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Scroll to top button */}
+      <AnimatePresence>
+        {show && showScrollTop && !isOpen && (
+          <motion.button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-[88px] right-5 sm:right-8 z-[62] w-10 h-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-[#d8ac6d] hover:border-[#d8ac6d]/40 transition-colors duration-300"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Volver arriba"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </motion.button>
         )}
       </AnimatePresence>
 
