@@ -76,7 +76,8 @@ export function Team() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <motion.img
                   src={member.image}
-                  alt={member.name}
+                  alt={`${member.name} — ${member.description}, Paraná Legal`}
+                  loading="lazy"
                   className={`w-full h-full object-cover ${member.objectPosition} grayscale-[30%] group-hover:grayscale-0 transition-all duration-700`}
                   whileHover={{ scale: 1.06 }}
                   transition={{ duration: 0.7, ease: "easeOut" }}

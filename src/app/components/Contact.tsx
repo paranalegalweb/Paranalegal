@@ -20,9 +20,13 @@ export function Contact() {
   });
 
   const [selectedPro, setSelectedPro] = useState<number | null>(null);
+  const [attempted, setAttempted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setAttempted(true);
+
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.message.trim()) return;
 
     const target = selectedPro !== null ? professionals[selectedPro] : null;
     const whatsappPhone = target ? target.whatsapp : '5493434706093';
@@ -71,7 +75,8 @@ export function Contact() {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl relative"
+          noValidate
+          className={`bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl relative ${attempted ? 'group/form' : ''}`}
           initial={{ opacity: 0, y: 50, filter: "blur(12px)", scale: 0.96 }}
           animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
           transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
@@ -160,7 +165,11 @@ export function Contact() {
                   required={field.required}
                   value={formData[field.id as keyof typeof formData]}
                   onChange={handleChange}
-                  className="w-full bg-[#000000]/50 border border-[#ffffff]/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 placeholder-gray-600 hover:border-[#ffffff]/20"
+                  className={`w-full bg-[#000000]/50 border text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 placeholder-gray-600 hover:border-[#ffffff]/20 ${
+                    attempted && field.required && !formData[field.id as keyof typeof formData].trim()
+                      ? 'border-red-500/60 ring-1 ring-red-500/30'
+                      : 'border-[#ffffff]/10'
+                  }`}
                   placeholder={field.placeholder}
                 />
               </motion.div>
@@ -183,7 +192,11 @@ export function Contact() {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="w-full bg-[#000000]/50 border border-[#ffffff]/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 resize-none placeholder-gray-600 hover:border-[#ffffff]/20"
+              className={`w-full bg-[#000000]/50 border text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 resize-none placeholder-gray-600 hover:border-[#ffffff]/20 ${
+                attempted && !formData.message.trim()
+                  ? 'border-red-500/60 ring-1 ring-red-500/30'
+                  : 'border-[#ffffff]/10'
+              }`}
               placeholder="Describa brevemente su situación..."
             />
           </motion.div>
