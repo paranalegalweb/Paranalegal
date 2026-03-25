@@ -187,26 +187,20 @@ export function Testimonials() {
           </AnimatePresence>
         </div>
 
-        {/* Mobile: 1 card with AnimatePresence */}
-        <div className="sm:hidden mb-10 overflow-hidden">
-          <AnimatePresence mode="popLayout" custom={direction}>
-            <motion.div
-              key={current}
-              custom={direction}
-              variants={cardVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <TestimonialCard t={testimonials[current]} index={current} />
-            </motion.div>
-          </AnimatePresence>
+        {/* Mobile: horizontal swipe scroll */}
+        <div className="sm:hidden mb-10 -mx-6">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide">
+            {testimonials.map((t, i) => (
+              <div key={i} className="snap-center shrink-0 w-[85vw]">
+                <TestimonialCard t={t} index={i} />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Controls */}
+        {/* Controls — desktop only */}
         <motion.div
-          className="flex items-center justify-center gap-4"
+          className="hidden sm:flex items-center justify-center gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
