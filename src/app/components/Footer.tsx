@@ -82,7 +82,7 @@ export function Footer() {
           >
             <img
               src={logoImage}
-              alt="Paraná Legal"
+              alt="Paraná Legal — Estudio Jurídico en Paraná, Entre Ríos"
               className="h-16 w-auto object-contain object-left"
             />
             <p className="text-[#524F4C] text-sm leading-relaxed max-w-xs">
