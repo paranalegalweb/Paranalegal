@@ -153,13 +153,13 @@ export function Navigation() {
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
-                className={`md:hidden pt-4 pb-6 px-2 space-y-1 overflow-hidden ${
+                className={`md:hidden pt-4 pb-6 px-2 space-y-1 origin-top ${
                   !isScrolled ? 'bg-black/90 backdrop-blur-md rounded-2xl mt-2' : ''
                 }`}
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                initial={{ opacity: 0, scaleY: 0.6, filter: "blur(6px)" }}
+                animate={{ opacity: 1, scaleY: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scaleY: 0.6, filter: "blur(6px)" }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
                 {navItems.map((item, index) => (
                   <motion.button
@@ -168,9 +168,9 @@ export function Navigation() {
                     className={`block w-full text-left px-4 py-3 rounded-xl text-base font-medium hover:bg-[#d8ac6d]/10 hover:text-[#d8ac6d] transition-colors ${
                       isScrolled ? 'text-[#000000]' : 'text-white'
                     }`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.08, duration: 0.3 }}
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.25 }}
                   >
                     {item.label}
                   </motion.button>
@@ -178,9 +178,9 @@ export function Navigation() {
                 <motion.button
                   onClick={() => scrollToSection('contact')}
                   className="bg-[#d8ac6d] hover:bg-[#c99b5c] text-white text-base font-semibold px-6 py-3 rounded-xl transition-colors duration-300 w-full mt-3"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.32, duration: 0.3 }}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.25 }}
                 >
                   Contacto
                 </motion.button>
