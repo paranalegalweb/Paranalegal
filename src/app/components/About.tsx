@@ -3,11 +3,10 @@ import { useRef } from 'react';
 import { ArrowRight, CheckCircle2, Building, Users, Handshake } from 'lucide-react';
 
 const blurIn = {
-  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 30 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
   }),
 };
@@ -86,8 +85,8 @@ export function About() {
                 <motion.div
                   key={i}
                   className="flex items-center gap-3"
-                  initial={{ opacity: 0, x: -20, filter: "blur(6px)" }}
-                  animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + (i * 0.1), ease: [0.16, 1, 0.3, 1] }}
                 >
                   <motion.div
@@ -107,8 +106,8 @@ export function About() {
               className="group relative overflow-hidden bg-[#000000] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center gap-3"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-              animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.6 }}
             >
               <div className="absolute inset-0 bg-[#d8ac6d]/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
@@ -122,8 +121,8 @@ export function About() {
               <motion.div
                 key={index}
                 className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(216,172,109,0.12)] transition-all duration-500 relative overflow-hidden group"
-                initial={{ opacity: 0, x: 60, filter: "blur(10px)", scale: 0.95 }}
-                animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)", scale: 1 } : {}}
+                initial={{ opacity: 0, x: 60, scale: 0.95 }}
+                animate={isInView ? { opacity: 1, x: 0, scale: 1 } : {}}
                 transition={{
                   duration: 0.7,
                   delay: 0.15 + index * 0.12,

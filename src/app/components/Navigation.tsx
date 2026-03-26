@@ -156,9 +156,9 @@ export function Navigation() {
                 className={`md:hidden pt-4 pb-6 px-2 space-y-1 origin-top ${
                   !isScrolled ? 'bg-black/90 backdrop-blur-md rounded-2xl mt-2' : ''
                 }`}
-                initial={{ opacity: 0, scaleY: 0.6, filter: "blur(6px)" }}
-                animate={{ opacity: 1, scaleY: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scaleY: 0.6, filter: "blur(6px)" }}
+                initial={{ opacity: 0, scaleY: 0.6 }}
+                animate={{ opacity: 1, scaleY: 1 }}
+                exit={{ opacity: 0, scaleY: 0.6 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
                 {navItems.map((item, index) => (

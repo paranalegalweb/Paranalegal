@@ -21,21 +21,19 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
 const featureVariants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(8px)", scale: 0.95 },
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     scale: 1,
     transition: {
       duration: 0.7,
@@ -109,8 +107,8 @@ export function Hero() {
             Estudio Jurídico <br />
             <motion.span
               className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8ac6d] to-[#f3dca8] inline-block"
-              initial={{ opacity: 0, x: -30, filter: "blur(12px)" }}
-              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               Integral en Paraná
@@ -153,8 +151,8 @@ export function Hero() {
           {/* Features — mobile: compact inline pills */}
           <motion.div
             className="flex sm:hidden flex-wrap gap-2 mb-8"
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             {features.map((feature, index) => {
@@ -173,8 +171,8 @@ export function Hero() {
 
           {/* CTA Button */}
           <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="w-full sm:w-auto"
           >

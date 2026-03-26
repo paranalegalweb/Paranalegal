@@ -48,8 +48,8 @@ export function Team() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-12 sm:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="text-[#d8ac6d] font-bold tracking-widest uppercase text-sm block mb-3">Nuestros Profesionales</span>
@@ -63,8 +63,8 @@ export function Team() {
             <motion.div
               key={index}
               className="group bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50 hover:shadow-[0_20px_50px_rgb(216,172,109,0.12)]"
-              initial={{ opacity: 0, y: 60, filter: "blur(10px)", scale: 0.93 }}
-              animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
+              initial={{ opacity: 0, y: 60, scale: 0.93 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{
                 duration: 0.8,
                 delay: 0.15 + index * 0.12,

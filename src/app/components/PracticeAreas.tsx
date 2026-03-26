@@ -48,8 +48,8 @@ export function PracticeAreas() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d8ac6d]/30 bg-[#d8ac6d]/5 mb-6">
@@ -70,8 +70,8 @@ export function PracticeAreas() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50, filter: "blur(10px)", scale: 0.92 }}
-                animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
+                initial={{ opacity: 0, y: 50, scale: 0.92 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{
                   duration: 0.7,
                   delay: 0.1 + index * 0.08,

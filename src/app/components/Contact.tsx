@@ -63,8 +63,8 @@ export function Contact() {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="text-[#d8ac6d] font-bold tracking-widest uppercase text-sm block mb-3">Asesoramiento Legal</span>
@@ -80,8 +80,8 @@ export function Contact() {
           onSubmit={handleSubmit}
           noValidate
           className={`bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl relative ${attempted ? 'group/form' : ''}`}
-          initial={{ opacity: 0, y: 50, filter: "blur(12px)", scale: 0.96 }}
-          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
+          initial={{ opacity: 0, y: 50, scale: 0.96 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] pointer-events-none" />
@@ -89,8 +89,8 @@ export function Contact() {
           {/* Selector de profesional */}
           <motion.div
             className="mb-8"
-            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <label className="block text-gray-300 text-sm font-medium mb-3 pl-1">
@@ -156,8 +156,8 @@ export function Contact() {
               <motion.div
                 key={field.id}
                 className={field.id === 'email' ? 'md:col-span-2' : ''}
-                initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-                animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
                 <label htmlFor={field.id} className="block text-gray-300 text-sm font-medium mb-2 pl-1">
@@ -183,8 +183,8 @@ export function Contact() {
 
           <motion.div
             className="mb-8"
-            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
           >
             <label htmlFor="message" className="block text-gray-300 text-sm font-medium mb-2 pl-1">
@@ -209,8 +209,8 @@ export function Contact() {
           <motion.button
             type="submit"
             className="w-full relative group overflow-hidden bg-gradient-to-r from-[#d8ac6d] to-[#b3884b] text-black font-bold px-6 py-4 md:py-5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(216,172,109,0.2)] hover:shadow-[0_0_40px_rgba(216,172,109,0.4)] flex items-center justify-center gap-3"
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}

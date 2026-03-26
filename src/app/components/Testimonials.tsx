@@ -51,19 +51,16 @@ const cardVariants = {
   enter: (direction: number) => ({
     x: direction > 0 ? 60 : -60,
     opacity: 0,
-    filter: "blur(8px)",
     scale: 0.95,
   }),
   center: {
     x: 0,
     opacity: 1,
-    filter: "blur(0px)",
     scale: 1,
   },
   exit: (direction: number) => ({
     x: direction < 0 ? 60 : -60,
     opacity: 0,
-    filter: "blur(8px)",
     scale: 0.95,
   }),
 };
@@ -146,8 +143,8 @@ export function Testimonials() {
         {/* Header */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d8ac6d]/30 bg-[#d8ac6d]/5 mb-6">

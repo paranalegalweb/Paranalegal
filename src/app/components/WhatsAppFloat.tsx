@@ -62,9 +62,9 @@ export function WhatsAppFloat() {
         {isOpen && (
           <motion.div
             className="fixed bottom-24 right-5 sm:right-8 z-[61] w-[calc(100vw-2.5rem)] sm:w-80"
-            initial={{ opacity: 0, y: 20, scale: 0.9, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: 20, scale: 0.9, filter: "blur(8px)" }}
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="bg-[#0a0a0a] border border-[#ffffff]/15 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden">
