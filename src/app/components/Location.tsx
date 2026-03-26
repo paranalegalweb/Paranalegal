@@ -96,7 +96,7 @@ export function Location() {
         {/* Map wrapper con overlay de color corporativo */}
         <div className="relative h-[300px] md:h-[350px] overflow-hidden">
           {/* Color tint overlay para integrar el mapa al diseño oscuro */}
-          <div className="absolute inset-0 pointer-events-none z-10 mix-blend-multiply bg-[#524F4C]/20" />
+          <div className="absolute inset-0 pointer-events-none z-10 bg-[#524F4C]/20" />
 
           <iframe
             src="https://maps.google.com/maps?q=Santa%20Fe%2053%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina&t=&z=17&ie=UTF8&iwloc=&output=embed"
@@ -138,7 +138,7 @@ export function Location() {
             href="https://www.google.com/maps/search/Santa+Fe+53,+Paraná,+Entre+Ríos,+Argentina"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#000000]/80 backdrop-blur-sm border border-[#d8ac6d]/40 hover:border-[#d8ac6d] text-[#d8ac6d] text-sm font-semibold px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-[#d8ac6d]/10 shadow-lg"
+            className="flex items-center gap-2 bg-[#000000]/90 border border-[#d8ac6d]/40 hover:border-[#d8ac6d] text-[#d8ac6d] text-sm font-semibold px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-[#d8ac6d]/10 shadow-lg"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >

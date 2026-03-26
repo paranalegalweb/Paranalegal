@@ -70,7 +70,7 @@ export function Hero() {
     >
       {/* Background Image with subtle zoom */}
       <motion.div
-        className="absolute inset-0 bg-cover bg-center mix-blend-luminosity hidden sm:block"
+        className="absolute inset-0 bg-cover bg-center grayscale hidden sm:block"
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1.05, opacity: 0.4 }}
         transition={{
@@ -80,7 +80,7 @@ export function Hero() {
         style={{ backgroundImage: `url('${heroBg}')` }}
       />
       <motion.div
-        className="absolute inset-0 bg-cover bg-center mix-blend-luminosity sm:hidden"
+        className="absolute inset-0 bg-cover bg-center grayscale sm:hidden"
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1.05, opacity: 0.4 }}
         transition={{
@@ -135,7 +135,7 @@ export function Hero() {
                   variants={featureVariants}
                   initial="hidden"
                   animate="visible"
-                  className="flex items-center gap-3 bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-sm px-4 py-3 rounded-xl"
+                  className="flex items-center gap-3 bg-[#ffffff]/8 border border-[#ffffff]/10 px-4 py-3 rounded-xl"
                   whileHover={{ scale: 1.03, borderColor: "rgba(216,172,109,0.4)" }}
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >

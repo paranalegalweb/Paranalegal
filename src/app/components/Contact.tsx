@@ -79,7 +79,7 @@ export function Contact() {
         <motion.form
           onSubmit={handleSubmit}
           noValidate
-          className={`bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl relative ${attempted ? 'group/form' : ''}`}
+          className={`bg-[#0a0a0a]/95 border border-[#ffffff]/10 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl relative ${attempted ? 'group/form' : ''}`}
           initial={{ opacity: 0, y: 50, scale: 0.96 }}
           animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}

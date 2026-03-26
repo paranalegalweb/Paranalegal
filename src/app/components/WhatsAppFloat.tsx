@@ -47,7 +47,7 @@ export function WhatsAppFloat() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
+            className="fixed inset-0 bg-black/50 z-[60]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -116,7 +116,7 @@ export function WhatsAppFloat() {
         {show && showScrollTop && !isOpen && (
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-[88px] right-5 sm:right-8 z-[62] w-10 h-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-[#d8ac6d] hover:border-[#d8ac6d]/40 transition-colors duration-300"
+            className="fixed bottom-[88px] right-5 sm:right-8 z-[62] w-10 h-10 rounded-full bg-[#1a1a1a] border border-white/20 flex items-center justify-center text-white/70 hover:text-[#d8ac6d] hover:border-[#d8ac6d]/40 transition-colors duration-300"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}

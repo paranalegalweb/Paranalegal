@@ -154,7 +154,7 @@ export function Navigation() {
             {isMobileMenuOpen && (
               <motion.div
                 className={`md:hidden pt-4 pb-6 px-2 space-y-1 origin-top ${
-                  !isScrolled ? 'bg-black/90 backdrop-blur-md rounded-2xl mt-2' : ''
+                  !isScrolled ? 'bg-black/95 rounded-2xl mt-2' : ''
                 }`}
                 initial={{ opacity: 0, scaleY: 0.6 }}
                 animate={{ opacity: 1, scaleY: 1 }}

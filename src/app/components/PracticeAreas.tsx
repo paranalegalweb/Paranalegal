@@ -78,7 +78,7 @@ export function PracticeAreas() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }}
-                className="group relative bg-[#ffffff]/5 border border-[#ffffff]/10 backdrop-blur-sm p-6 sm:p-8 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-[#ffffff]/10 hover:border-[#d8ac6d]/50"
+                className="group relative bg-[#ffffff]/5 border border-[#ffffff]/10 p-6 sm:p-8 rounded-2xl overflow-hidden transition-all duration-500 hover:bg-[#ffffff]/10 hover:border-[#d8ac6d]/50"
               >
                 {/* Hover gradient effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#d8ac6d]/0 via-[#d8ac6d]/0 to-[#d8ac6d]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
