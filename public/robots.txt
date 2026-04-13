@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://parana-legal.vercel.app/sitemap.xml

@@ -94,6 +94,7 @@ export function Team() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#d8ac6d] hover:bg-[#524F4C] text-white p-2.5 rounded-full transition-colors shadow-lg translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-500"
+                    tabIndex={-1}
                     aria-label={`WhatsApp ${member.name}`}
                   >
                     <MessageCircle className="w-5 h-5" />
@@ -127,6 +128,7 @@ export function Team() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="md:hidden flex items-center justify-center gap-2 w-full bg-[#d8ac6d] hover:bg-[#c99b5c] text-white text-sm font-semibold py-3 rounded-xl transition-colors"
+                  aria-label={`Consultar a ${member.name} por WhatsApp`}
                 >
                   <MessageCircle className="w-4 h-4" />
                   Consultar por WhatsApp

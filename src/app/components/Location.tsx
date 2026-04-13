@@ -104,6 +104,7 @@ export function Location() {
             height="100%"
             style={{ border: 0, filter: 'grayscale(30%) contrast(1.05) brightness(0.85)' }}
             allowFullScreen
+            allow="fullscreen"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Ubicación Paraná Legal — Santa Fe 53, Paraná"

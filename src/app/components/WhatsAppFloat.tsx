@@ -53,6 +53,7 @@ export function WhatsAppFloat() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setIsOpen(false)}
+            aria-hidden="true"
           />
         )}
       </AnimatePresence>
@@ -67,7 +68,7 @@ export function WhatsAppFloat() {
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="bg-[#0a0a0a] border border-[#ffffff]/15 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div className="bg-[#0a0a0a] border border-[#ffffff]/15 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden" role="dialog" aria-label="Seleccionar profesional para WhatsApp">
               {/* Header */}
               <div className="px-5 pt-5 pb-3">
                 <p className="text-white font-bold text-base">¿Con quién desea hablar?</p>
@@ -89,6 +90,7 @@ export function WhatsAppFloat() {
                     <img
                       src={contact.image}
                       alt={contact.name}
+                      loading="lazy"
                       className="w-10 h-10 rounded-xl object-cover object-top flex-shrink-0 border border-[#d8ac6d]/20"
                     />
                     <div className="flex-1 min-w-0">
