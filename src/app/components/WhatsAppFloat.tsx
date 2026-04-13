@@ -137,8 +137,8 @@ export function WhatsAppFloat() {
         {show && (
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="fixed bottom-6 right-5 sm:right-8 z-[62] w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_24px_rgba(37,211,102,0.35)] hover:shadow-[0_4px_32px_rgba(37,211,102,0.5)] transition-shadow duration-300"
-            style={{ backgroundColor: isOpen ? '#1a1a1a' : '#25D366' }}
+            className="fixed bottom-6 right-5 sm:right-8 z-[62] w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_24px_rgba(216,172,109,0.35)] hover:shadow-[0_4px_32px_rgba(216,172,109,0.5)] transition-shadow duration-300"
+            style={{ backgroundColor: isOpen ? '#1a1a1a' : '#d8ac6d' }}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
@@ -182,7 +182,7 @@ export function WhatsAppFloat() {
             initial={{ scale: 0 }}
             animate={{ scale: [1, 1.5, 1.5], opacity: [0.4, 0, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-            style={{ backgroundColor: '#25D366' }}
+            style={{ backgroundColor: '#d8ac6d' }}
           />
         )}
       </AnimatePresence>

@@ -54,7 +54,7 @@ export function Hero() {
   const features = [
     {
       icon: MessageSquare,
-      text: "Atención personalizada en forma presencial y virtual",
+      text: "Atención presencial y virtual",
     },
     { icon: Users, text: "Equipo de profesionales" },
     {

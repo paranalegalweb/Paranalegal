@@ -63,8 +63,8 @@ export function Footer() {
               <Phone className="w-3.5 h-3.5 text-[#d8ac6d]" />
               343 470 6093
             </a>
-            <a href="mailto:consultas@paranalegal.com.ar" className="flex items-center gap-1.5 hover:text-[#d8ac6d] transition-colors">
-              <Mail className="w-3.5 h-3.5 text-[#d8ac6d]" />
+            <a href="mailto:consultas@paranalegal.com.ar" className="flex items-center gap-1.5 hover:text-[#d8ac6d] transition-colors break-all">
+              <Mail className="w-3.5 h-3.5 text-[#d8ac6d] flex-shrink-0" />
               consultas@paranalegal.com.ar
             </a>
           </div>

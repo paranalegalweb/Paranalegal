@@ -111,14 +111,14 @@ export function Team() {
                 >
                   {getInitial(member.name)}
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#000000] mb-2 group-hover:text-[#d8ac6d] transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#000000] mb-2 group-hover:text-[#d8ac6d] transition-colors duration-300 sm:min-h-[3.5rem] lg:min-h-[4rem]">
                   {member.name}
                 </h3>
                 <p className="text-[#d8ac6d] font-semibold text-sm uppercase tracking-wide mb-3">
                   {member.role}
                 </p>
                 <div className="w-12 h-1 bg-gradient-to-r from-[#d8ac6d] to-transparent mb-4 group-hover:w-20 transition-all duration-500" />
-                <p className="text-[#524F4C] leading-relaxed text-sm sm:text-base mb-4 md:mb-0">
+                <p className="text-[#524F4C] leading-relaxed text-sm sm:text-base mb-4 md:mb-0 sm:min-h-[3rem]">
                   {member.description}
                 </p>
 

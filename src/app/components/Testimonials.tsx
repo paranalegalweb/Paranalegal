@@ -188,7 +188,7 @@ export function Testimonials() {
         <div className="sm:hidden mb-10 -mx-6">
           <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-6 pb-4 scrollbar-hide">
             {testimonials.map((t, i) => (
-              <div key={i} className="snap-center shrink-0 w-[85vw]">
+              <div key={i} className="snap-center shrink-0 w-[80vw]">
                 <TestimonialCard t={t} index={i} />
               </div>
             ))}

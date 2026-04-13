@@ -94,7 +94,7 @@ export function Location() {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-[#d8ac6d]/40 to-transparent" />
 
         {/* Map wrapper con overlay de color corporativo */}
-        <div className="relative h-[300px] md:h-[350px] overflow-hidden">
+        <div className="relative h-[250px] sm:h-[300px] md:h-[350px] overflow-hidden">
           {/* Color tint overlay para integrar el mapa al diseño oscuro */}
           <div className="absolute inset-0 pointer-events-none z-10 bg-[#524F4C]/20" />
 

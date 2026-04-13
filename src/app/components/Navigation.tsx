@@ -60,7 +60,7 @@ export function Navigation() {
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <motion.div 
-          className="max-w-7xl mx-auto px-6"
+          className="max-w-7xl mx-auto px-4 sm:px-6"
           animate={{
             paddingTop: isScrolled ? '12px' : '16px',
             paddingBottom: isScrolled ? '12px' : '16px',

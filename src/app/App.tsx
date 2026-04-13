@@ -12,7 +12,7 @@ import { WhatsAppFloat } from './components/WhatsAppFloat';
 
 export default function App() {
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="min-h-screen relative">
       <Navigation />
       <Hero />
       <About />

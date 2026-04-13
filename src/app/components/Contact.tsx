@@ -60,9 +60,9 @@ export function Contact() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:24px_24px]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[400px] bg-[#d8ac6d]/20 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -170,7 +170,7 @@ export function Contact() {
                   required={field.required}
                   value={formData[field.id as keyof typeof formData]}
                   onChange={handleChange}
-                  className={`w-full bg-[#000000]/50 border text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 placeholder-gray-600 hover:border-[#ffffff]/20 ${
+                  className={`w-full bg-[#000000]/50 border text-white px-4 py-3 sm:px-5 sm:py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 placeholder-gray-600 hover:border-[#ffffff]/20 ${
                     attempted && field.required && !formData[field.id as keyof typeof formData].trim()
                       ? 'border-red-500/60 ring-1 ring-red-500/30'
                       : 'border-[#ffffff]/10'
@@ -194,10 +194,10 @@ export function Contact() {
               id="message"
               name="message"
               required
-              rows={5}
+              rows={4}
               value={formData.message}
               onChange={handleChange}
-              className={`w-full bg-[#000000]/50 border text-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 resize-none placeholder-gray-600 hover:border-[#ffffff]/20 ${
+              className={`w-full bg-[#000000]/50 border text-white px-4 py-3 sm:px-5 sm:py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d8ac6d] focus:border-transparent transition-all duration-300 resize-none placeholder-gray-600 hover:border-[#ffffff]/20 ${
                 attempted && !formData.message.trim()
                   ? 'border-red-500/60 ring-1 ring-red-500/30'
                   : 'border-[#ffffff]/10'
