@@ -73,7 +73,7 @@ export function About() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              Defendiendo sus derechos con <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8ac6d] to-[#b3884b]">excelencia</span>
+              Defendiendo sus derechos en Paraná con <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d8ac6d] to-[#b3884b]">excelencia</span>
             </motion.h2>
 
             <div className="space-y-4 mb-10">

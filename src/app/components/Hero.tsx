@@ -113,6 +113,7 @@ export function Hero() {
             >
               Integral en Paraná
             </motion.span>
+            <span className="sr-only">, Entre Ríos, Argentina — Abogados especializados</span>
           </motion.h1>
 
           <motion.p
