@@ -102,7 +102,7 @@ export function Contact() {
                   key={index}
                   type="button"
                   onClick={() => setSelectedPro(selectedPro === index ? null : index)}
-                  className={`relative text-left p-4 rounded-xl border transition-all duration-300 group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0 ${
+                  className={`relative text-left p-4 pr-10 sm:pr-4 rounded-xl border transition-all duration-300 group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0 ${
                     selectedPro === index
                       ? 'border-[#d8ac6d] bg-[#d8ac6d]/10'
                       : 'border-[#ffffff]/10 bg-[#000000]/30 hover:border-[#d8ac6d]/40 hover:bg-[#ffffff]/5'

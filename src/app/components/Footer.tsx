@@ -17,7 +17,7 @@ const areas = [
   'Daños y Perjuicios',
   'Derecho Administrativo',
   'Amparos',
-  'Derecho Civil',
+  'Derecho de las Cosas y las Personas',
   'Derecho Laboral',
 ];
 

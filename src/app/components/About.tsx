@@ -103,7 +103,7 @@ export function About() {
 
             <motion.button
               onClick={handleConsultClick}
-              className="group relative overflow-hidden bg-[#000000] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center gap-3"
+              className="group relative overflow-hidden bg-[#000000] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 w-full sm:w-auto"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               initial={{ opacity: 0, y: 20 }}

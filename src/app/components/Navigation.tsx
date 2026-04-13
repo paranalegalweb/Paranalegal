@@ -78,12 +78,8 @@ export function Navigation() {
                 src={logoImage}
                 alt="Paraná Legal — Estudio Jurídico Integral en Paraná, Entre Ríos"
                 className={`w-auto transition-all duration-300 ${
-                  isScrolled ? 'brightness-0' : 'brightness-0 invert'
+                  isScrolled ? 'brightness-0 h-[44px] sm:h-[56px]' : 'brightness-0 invert h-[52px] sm:h-[72px]'
                 }`}
-                animate={{
-                  height: isScrolled ? '56px' : '72px',
-                }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
               />
             </motion.button>
 
