@@ -92,7 +92,7 @@ export function PracticeAreas() {
                     <Icon className="w-7 h-7 text-white" />
                   </motion.div>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#d8ac6d] transition-colors duration-300">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#d8ac6d] transition-colors duration-300 sm:min-h-[3.5rem] lg:min-h-[4rem]">
                       {area.title}
                     </h3>
                     <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">

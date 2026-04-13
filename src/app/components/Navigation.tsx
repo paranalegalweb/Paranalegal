@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Users, Scale, UserCircle, MessageCircleQuestion, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import logoImage from '@/assets/6748625df0920d908e397e95d9b2dd954daeb897.webp';
 
@@ -32,10 +32,10 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { label: 'Sobre Nosotros', id: 'about' },
-    { label: 'Áreas de Práctica', id: 'areas' },
-    { label: 'Equipo', id: 'team' },
-    { label: 'Consultas', id: 'faq' },
+    { label: 'Sobre Nosotros', id: 'about', icon: Users },
+    { label: 'Áreas de Práctica', id: 'areas', icon: Scale },
+    { label: 'Equipo', id: 'team', icon: UserCircle },
+    { label: 'Consultas', id: 'faq', icon: MessageCircleQuestion },
   ];
 
   return (
@@ -159,27 +159,32 @@ export function Navigation() {
                 exit={{ opacity: 0, scaleY: 0.6 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
-                {navItems.map((item, index) => (
-                  <motion.button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`block w-full text-left px-4 py-3 rounded-xl text-base font-medium hover:bg-[#d8ac6d]/10 hover:text-[#d8ac6d] transition-colors ${
-                      isScrolled ? 'text-[#000000]' : 'text-white'
-                    }`}
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05, duration: 0.25 }}
-                  >
-                    {item.label}
-                  </motion.button>
-                ))}
+                {navItems.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-xl text-base font-medium hover:bg-[#d8ac6d]/10 hover:text-[#d8ac6d] transition-colors ${
+                        isScrolled ? 'text-[#000000]' : 'text-white'
+                      }`}
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05, duration: 0.25 }}
+                    >
+                      <Icon className="w-5 h-5 text-[#d8ac6d] flex-shrink-0" />
+                      {item.label}
+                    </motion.button>
+                  );
+                })}
                 <motion.button
                   onClick={() => scrollToSection('contact')}
-                  className="bg-[#d8ac6d] hover:bg-[#c99b5c] text-white text-base font-semibold px-6 py-3 rounded-xl transition-colors duration-300 w-full mt-3"
+                  className="bg-[#d8ac6d] hover:bg-[#c99b5c] text-white text-base font-semibold px-6 py-3 rounded-xl transition-colors duration-300 w-full mt-3 flex items-center justify-center gap-2"
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.25 }}
                 >
+                  <Phone className="w-5 h-5 flex-shrink-0" />
                   Contacto
                 </motion.button>
               </motion.div>
