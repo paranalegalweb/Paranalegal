@@ -81,7 +81,7 @@ export function Navigation() {
                   isScrolled ? 'brightness-0' : 'brightness-0 invert'
                 }`}
                 animate={{
-                  height: isScrolled ? '48px' : '60px',
+                  height: isScrolled ? '56px' : '72px',
                 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
               />

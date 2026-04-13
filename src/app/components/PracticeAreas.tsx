@@ -1,4 +1,4 @@
-import { Heart, Car, Building2, Briefcase, Scale, Shield } from 'lucide-react';
+import { Heart, Car, Building2, Briefcase, Scale, Shield, BookOpen } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 
@@ -16,22 +16,22 @@ const areas = [
   {
     icon: Building2,
     title: 'Derecho Administrativo',
-    description: 'Recursos administrativos, contrataciones públicas, empleo público, responsabilidad del Estado y procedimientos ante organismos públicos.'
+    description: 'Asesoramiento y representación en recursos administrativos, relaciones de empleo público, régimen de contrataciones públicas, responsabilidad del Estado y procedimientos administrativos.'
   },
   {
     icon: Shield,
     title: 'Amparos',
-    description: 'Amparos de salud, amparos por discapacidad, género, medio ambiente, y toda violación constitucional.'
+    description: 'Amparos de salud, discapacidad, género, medio ambiente, previsionales (jubilaciones, pensiones, ANSES), amparos contra el Estado (actos arbitrarios, omisiones, demoras administrativas), amparos por acceso a medicamentos de alto costo, y toda violación de derechos constitucionales.'
   },
   {
-    icon: Scale,
-    title: 'Derecho Civil',
-    description: 'Derechos de las personas, usucapiones, guarda, tutela, asesoramiento contractual en todas las etapas, alquileres, desalojos, ejecuciones de contratos, cobros de pesos, ejecuciones en general.'
+    icon: BookOpen,
+    title: 'Derecho de las Cosas y las Personas',
+    description: 'Derechos de las personas, derechos sobre muebles e inmuebles, usucapiones, contratos, pólizas de seguro, asesoramiento en todas las etapas, alquileres, compraventas, desalojos, ejecuciones de contratos, embargos, cobros de sumas de dinero. Cartas documento.'
   },
   {
     icon: Briefcase,
     title: 'Derecho Laboral',
-    description: 'Despidos, ART, asesoramiento individual y colectivo, negociaciones colectivas y todo tipo de conflictos laborales.'
+    description: 'Despidos, accidentes laborales, indemnizaciones, licencias, asesoramiento individual y colectivo, negociaciones colectivas y todo tipo de conflictos laborales.'
   }
 ];
 

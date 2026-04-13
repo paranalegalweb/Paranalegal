@@ -119,9 +119,7 @@ export function Hero() {
             variants={itemVariants}
             className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-10 leading-relaxed font-light max-w-2xl"
           >
-            Equipo de abogados especializados que brinda
-            asesoramiento legal y representación profesional en
-            diversas áreas del derecho.
+            Equipo de abogados que brinda asesoramiento legal y representación profesional en diversas áreas del derecho.
           </motion.p>
 
           {/* Features — hidden on mobile, shown on sm+ */}

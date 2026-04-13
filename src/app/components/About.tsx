@@ -30,18 +30,18 @@ export function About() {
   const cards = [
     {
       icon: Building,
-      title: "Acerca de Paraná Legal",
-      text: 'Paraná Legal es un estudio jurídico integral con sede en Paraná, Entre Ríos, que brinda servicios legales especializados con profesionales formados y con amplio expertiz en las áreas del derecho de su especialidad.',
+      title: "Acerca de Nosotros",
+      text: 'En Paraná Legal combinamos experiencia, especialización y compromiso para ofrecer soluciones jurídicas concretas. Somos un estudio integral con sede en Paraná, Entre Ríos, que acompaña a personas y empresas en la defensa de sus derechos, con un enfoque ágil y estratégico.',
     },
     {
       icon: Users,
       title: "Nuestro Equipo",
-      text: 'Nuestro equipo está conformado por abogados con amplia experiencia en diversas ramas del derecho, comprometidos en la defensa de los intereses de nuestros clientes y en la resolución práctica de los conflictos.',
+      text: 'Somos un equipo de profesionales que trabaja de manera cercana, combinando experiencia jurídica y compromiso para dar respuestas concretas a cada situación.',
     },
     {
       icon: Handshake,
       title: "Compromiso",
-      text: 'Con años de trayectoria en el ejercicio profesional, nos distinguimos por nuestro enfoque personalizado, la atención integral de cada caso y el compromiso con la justicia.',
+      text: 'Con años de trayectoria en el ejercicio profesional, nos distinguimos por nuestro enfoque personalizado, la atención integral de cada caso y el compromiso con el cliente.',
     }
   ];
 
