@@ -6,9 +6,9 @@ import gareisFoto from '@/assets/319580ecb14ee19e4837478307535e23137c8e4d.webp';
 import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.webp';
 
 const contacts = [
-  { name: 'Dra. Julieta Fowler', short: 'Julieta', role: 'Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
-  { name: 'Dr. Joaquín Gareis', short: 'Joaquín', role: 'Administrativo y Constitucional', whatsapp: '5493434519112', image: gareisFoto },
-  { name: 'Dra. M. Carolina Harrington', short: 'Carolina', role: 'Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
+  { name: 'Abogada Julieta Fowler', short: 'Julieta', role: 'Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
+  { name: 'Abogado Joaquín Gareis', short: 'Joaquín', role: 'Administrativo y Constitucional', whatsapp: '5493434519112', image: gareisFoto },
+  { name: 'Abogada M. Carolina Harrington', short: 'Carolina', role: 'Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
 ];
 
 export function WhatsAppFloat() {

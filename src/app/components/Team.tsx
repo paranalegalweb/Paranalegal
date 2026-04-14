@@ -8,7 +8,7 @@ import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.we
 const team = [
   {
     image: fowlerFoto,
-    name: 'Dra. Julieta Fowler',
+    name: 'Abogada Julieta Fowler',
     role: 'Socia',
     description: 'Especialista en Derecho de Daños y Derecho Laboral',
     whatsapp: '5493436101776',
@@ -16,15 +16,15 @@ const team = [
   },
   {
     image: gareisFoto,
-    name: 'Dr. Joaquín Gareis',
-    role: 'Socio fundador',
+    name: 'Abogado Joaquín Gareis',
+    role: 'Socio',
     description: 'Especialista en Derecho Administrativo y Constitucional y Laboral',
     whatsapp: '5493434519112',
     objectPosition: 'object-top'
   },
   {
     image: harringtonFoto,
-    name: 'Dra. María Carolina Harrington',
+    name: 'Abogada María Carolina Harrington',
     role: 'Socia',
     description: 'Especialista en Derecho de Familia, Sucesiones y de Daños',
     whatsapp: '5493434757858',

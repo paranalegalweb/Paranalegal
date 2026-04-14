@@ -6,9 +6,9 @@ import fowlerFoto from '@/assets/9c59ee4dd4fbff84b2045070d6201afd4aaff0b6.webp';
 import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.webp';
 
 const professionals = [
-  { name: 'Dr. Joaquín Gareis', role: 'Derecho Administrativo, Constitucional y Laboral', whatsapp: '5493434519112', image: gareisFoto },
-  { name: 'Dra. Julieta Fowler', role: 'Derecho de Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
-  { name: 'Dra. María Carolina Harrington', role: 'Derecho de Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
+  { name: 'Abogado Joaquín Gareis', role: 'Derecho Administrativo, Constitucional y Laboral', whatsapp: '5493434519112', image: gareisFoto },
+  { name: 'Abogada Julieta Fowler', role: 'Derecho de Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
+  { name: 'Abogada María Carolina Harrington', role: 'Derecho de Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
 ];
 
 export function Contact() {
