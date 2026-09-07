@@ -136,7 +136,7 @@ export function Location() {
         {/* CTA abrir en Google Maps */}
         <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-30">
           <motion.a
-            href="https://www.google.com/maps/search/Santa+Fe+53,+Paraná,+Entre+Ríos,+Argentina"
+            href="https://maps.app.goo.gl/9Pmusj2idgNkQtH57"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#000000]/90 border border-[#d8ac6d]/40 hover:border-[#d8ac6d] text-[#d8ac6d] text-xs sm:text-sm font-semibold px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl transition-all duration-300 hover:bg-[#d8ac6d]/10 shadow-lg"
