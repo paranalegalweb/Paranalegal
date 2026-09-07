@@ -12,7 +12,7 @@ const details = [
   {
     icon: Clock,
     label: 'Horario de atención',
-    value: 'Lun – Vie: 8:00 – 18:00',
+    value: 'Lun – Vie: 9:00 – 17:00',
     sub: 'Consultas virtuales disponibles',
   },
   {
