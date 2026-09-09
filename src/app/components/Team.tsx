@@ -27,7 +27,7 @@ const team = [
     name: 'Abogada María Carolina Harrington',
     role: 'Socia',
     description: 'Especialista en Derecho de Familia, Sucesiones y de Daños',
-    whatsapp: '5493434757858',
+    whatsapp: '5493434530103',
     objectPosition: 'object-center'
   }
 ];

@@ -8,7 +8,7 @@ import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.we
 const professionals = [
   { name: 'Abogado Joaquín Gareis', role: 'Derecho Administrativo, Constitucional y Laboral', whatsapp: '5493434519112', image: gareisFoto },
   { name: 'Abogada Julieta Fowler', role: 'Derecho de Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
-  { name: 'Abogada María Carolina Harrington', role: 'Derecho de Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
+  { name: 'Abogada María Carolina Harrington', role: 'Derecho de Familia, Sucesiones y Daños', whatsapp: '5493434530103', image: harringtonFoto },
 ];
 
 export function Contact() {

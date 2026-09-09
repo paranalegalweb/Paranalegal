@@ -8,7 +8,7 @@ import harringtonFoto from '@/assets/60de1ab3dd863e350d2c56b64d6db05cf9351f5e.we
 const contacts = [
   { name: 'Abogada Julieta Fowler', short: 'Julieta', role: 'Daños y Laboral', whatsapp: '5493436101776', image: fowlerFoto },
   { name: 'Abogado Joaquín Gareis', short: 'Joaquín', role: 'Administrativo y Constitucional', whatsapp: '5493434519112', image: gareisFoto },
-  { name: 'Abogada M. Carolina Harrington', short: 'Carolina', role: 'Familia, Sucesiones y Daños', whatsapp: '5493434757858', image: harringtonFoto },
+  { name: 'Abogada M. Carolina Harrington', short: 'Carolina', role: 'Familia, Sucesiones y Daños', whatsapp: '5493434530103', image: harringtonFoto },
 ];
 
 export function WhatsAppFloat() {
